@@ -1,0 +1,43 @@
+*******************************
+ Tile Attribute Editor 1.2 SDL
+ for CloneKeen
+ (c)2004-2007 Caitlin Shaw
+*******************************
+
+BufferIni: 64 lines buffered out of keen.conf.
+Incorrect config file version detected. Will reset it.
+Setting default options. (First time run?)
+> Game_Startup
+Starting graphics driver...
+allocmem(): allocating 1049600 bytes for scroll buffer...OK
+allocmem(): allocating 86400 bytes for blit buffer...OK
+VidDrv_Start: calling SDL_Init
+VidDrv_SetFullscreen(0)
+VidDrv_SetFullscreen: Setting window size to [640,480]
+VidDrv_SetFullscreen: SDL_SetVideoMode succesful.
+VidDrv_SetFullscreen: full screen mode is off
+Creating ScrollSurface (512x512)
+Creating BlitSurface (320x240)
+Starting sound driver...
+SDL_AudioSpec:
+  freq: 44100
+  channels: 1
+  audio buffer size: 512
+Using audio driver: dsound
+SoundDrv_Start(): SDL sound system initilized.
+Starting keyboard driver...
+Starting timer driver...
+Load_Episode(1)
+loadstrings(): Opening strings.dat.
+loadstrings(): Unable to open strings.dat.
+Unable to load episode 1
+  * Scrollbuffer memory released to system.
+  * Blitbuffer memory released to system.
+  * Graphics driver shut down.
+  * Freed 0 strings.
+  * Config file unbuffered.
+  * Keyboard driver shut down.
+  * Timer driver shut down.
+  * Sound driver shut down.
+  * SDL shut down.
+
