@@ -193,7 +193,13 @@ void VidDrv_flipbuffer()
   
   //SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
   //SDL_RenderClear(renderer);
-  SDL_RenderCopy(renderer, _tex, NULL, NULL);
+  SDL_Rect dstrect;
+  dstrect.x = 160;
+  dstrect.y = 0;
+  dstrect.w = 960;
+  dstrect.h = 720;
+
+  SDL_RenderCopy(renderer, _tex, NULL, &dstrect);
   SDL_RenderPresent(renderer);
   
   if(_tex != NULL) SDL_DestroyTexture(_tex);
