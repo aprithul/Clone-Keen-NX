@@ -4,6 +4,7 @@
         "*.fdh": "c",
         "keen.h": "c",
         "scale2x.h": "c",
-        "sdl.h": "c"
+        "sdl.h": "c",
+        "snddrv.h": "c"
     }
 }

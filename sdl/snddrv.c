@@ -25,11 +25,11 @@ char name[32];
 	lprintf("Starting sound driver...\n");
 	
 	// start up the SDL sound system
-	AudioSpec.freq = 44100;
+	AudioSpec.freq = 41000;
 	AudioSpec.format = AUDIO_U8;
-	AudioSpec.channels = 1;
+	AudioSpec.channels = 2;
 	AudioSpec.silence = 0;        //512;
-	AudioSpec.samples = 512;
+	AudioSpec.samples = 4096;
 	AudioSpec.callback = SoundDrv_Callback;
 	AudioSpec.userdata = NULL;
 	
@@ -45,8 +45,9 @@ char name[32];
 	lprintf("SDL_AudioSpec:\n");
 	lprintf("  freq: %d\n", AudioSpec.freq);
 	lprintf("  channels: %d\n", AudioSpec.channels);
+  lprintf("requested: %d\n", AUDIO_U8);
+  lprintf("format : %d\n", AudioSpec.format);
 	lprintf("  audio buffer size: %d\n", AudioSpec.size);
-	//lprintf("Using audio driver: %s\n", SDL_AudioDriverName(name, 32));
 	
 	sound_stop_all();
 	SDL_PauseAudio(0);
@@ -356,7 +357,9 @@ unsigned char MixedFormFinal[65535];
 
 void SoundDrv_Callback(void *unused, Uint8 *stream, int len)
 {
-	int    i, j, chan, numchannels;
+  
+  SDL_memset(stream, 0, len);
+  int    i, j, chan, numchannels;
 	uchar temp;
 
         chan = 0;
